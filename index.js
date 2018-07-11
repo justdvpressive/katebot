@@ -1,12 +1,28 @@
-const { Client } = require('discord.js');
-const path       = require('path');
-const logger    = require('./winstonConfig');
-const config     = require('./config.json');
+const { CommandoClient } = require('discord.js-commando');
+const config = require('./config.json');
+const path = require('path');
 
-const bot = new Client();
+const bot = new CommandoClient({
+  commandPrefix: config.discord.prefix,
+  owner: config.discord.owners,
+  disableEveryone: true
+});
 
 bot.on('ready', () => {
-  logger.info(`Bot(${bot.user.id}) ready.`);
+  console.log('Ready!');
 });
+
+bot.registry
+  .registerDefaultTypes()
+  .registerGroups([
+    ['dev', 'Developer tools'],
+    ['fun', 'Fun commands'],
+    ['util', 'Utility commands']
+  ])
+  .registerDefaultGroups()
+  .registerDefaultCommands({
+    help: false
+  })
+  .registerCommandsIn(path.join(__dirname, 'commands'));
 
 bot.login(config.discord.token);
