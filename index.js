@@ -1,6 +1,7 @@
 const { CommandoClient } = require('discord.js-commando');
 const config = require('./config.json');
 const path = require('path');
+const pkgcnf = require('./package.json')
 
 const bot = new CommandoClient({
   commandPrefix: config.discord.prefix,
@@ -11,6 +12,9 @@ const bot = new CommandoClient({
 
 bot.on('ready', () => {
   console.log('Ready!');
+  bot.user.setActivity(`${bot.commandPrefix}help | ${pkgcnf.version} by ${pkgcnf.author.name}`, { url: 'https://kate.js.org' });
+  bot.user.setUsername(config.discord.name);
+  bot.user.setAvatar(config.discord.avatarURL);
 });
 
 bot.registry
