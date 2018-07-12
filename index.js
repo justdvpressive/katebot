@@ -14,7 +14,6 @@ bot.on('ready', () => {
   console.log('Ready!');
   bot.user.setActivity(`${bot.commandPrefix}help | ${pkgcnf.version} by ${pkgcnf.author.name}`, { url: 'https://kate.js.org' });
   bot.user.setUsername(config.discord.name);
-  bot.user.setAvatar(config.discord.avatarURL);
 });
 
 bot.registry
@@ -22,7 +21,8 @@ bot.registry
   .registerGroups([
     ['dev', 'Developer tools'],
     ['fun', 'Fun commands'],
-    ['util', 'Utility commands']
+    ['util', 'Utility commands'],
+    ['emotes', 'Emote commands']
   ])
   .registerDefaultGroups()
   .registerDefaultCommands({
