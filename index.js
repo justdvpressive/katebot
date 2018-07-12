@@ -5,7 +5,8 @@ const path = require('path');
 const bot = new CommandoClient({
   commandPrefix: config.discord.prefix,
   owner: config.discord.owners,
-  disableEveryone: true
+  disableEveryone: true,
+  unknownCommandResponse: false
 });
 
 bot.on('ready', () => {
