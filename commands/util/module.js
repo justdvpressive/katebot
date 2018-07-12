@@ -16,7 +16,8 @@ module.exports = class ModuleCommand extends Command {
           prompt: 'What module should I look up?',
           type: 'string'
         }
-      ]
+      ],
+      aliases: ['commands']
     });
   }
 
