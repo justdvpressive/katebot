@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "git@github.com:thecodesuite/katebot.git",
   "author": {
-    "name": "Hayden Young", 
+    "name": "Hayden Young",
     "email": "hayden@haydenbjyoung.me",
     "url": "https://haydenbjyoung.me"
   },
@@ -12,7 +12,8 @@
   "dependencies": {
     "discord.js": "^11.3.2",
     "discord.js-commando": "^0.10.0",
-    "request": "^2.87.0"
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
   },
   "scripts": {
     "start": "nodemon"
