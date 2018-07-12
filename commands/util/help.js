@@ -28,7 +28,7 @@ module.exports = class HelpCommand extends Command {
         .setFooter(EmbedFooter(), this.client.user.avatarURL)
         .setColor('#FE5B35');
 
-      msg.say({ embed });
+      msg.author.send({ embed });
     } else {
       this.client.registry.findCommands(command, true).forEach(cmd => {
         var embed = new RichEmbed()
@@ -39,7 +39,7 @@ module.exports = class HelpCommand extends Command {
           .addField('Description', cmd.description)
           .setColor('#FE5B35');
 
-        msg.say({ embed });
+        msg.author.send({ embed });
       })
     }
   }

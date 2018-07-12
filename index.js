@@ -1,7 +1,7 @@
 const { CommandoClient } = require('discord.js-commando');
 const config = require('./config.json');
 const path = require('path');
-const pkgcnf = require('./package.json')
+const pkgcnf = require('./package.json');
 
 const bot = new CommandoClient({
   commandPrefix: config.discord.prefix,
