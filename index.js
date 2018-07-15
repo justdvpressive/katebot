@@ -1,8 +1,8 @@
-const { CommandoClient } = require('discord.js-commando');
+const Kate = require('./util/KateClient');
 const path = require('path');
 const pkgcnf = require('./package.json');
 
-const bot = new CommandoClient({
+const bot = new Kate({
   commandPrefix: process.env.prefix,
   owner: [ process.env.owner ],
   disableEveryone: true,
