@@ -22,13 +22,14 @@ module.exports = class HastebinCommand extends Command {
   run(msg, { content }) {
     if(content.startsWith('```')) {
       var text = content.slice(3)
-      if(text.split('\n')[0] != '') {
-        text.pop()
-        var ext = text.shift()
-        this.client.hastebin(text, ext).then(res => msg.say(res));
+      var split = text.split('\n')
+      if(split[0] != '') {
+        split.pop()
+        var ext = split.shift()
+        this.client.hastebin(split, ext).then(res => msg.say(res));
       } else {
-        text.pop()
-        text.shift()
+        split.pop()
+        split.shift()
         this.client.hastebin(content, 'txt').then(res => msg.say(res));
       }
     } else {
