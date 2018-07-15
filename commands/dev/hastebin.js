@@ -26,14 +26,50 @@ module.exports = class HastebinCommand extends Command {
       if(split[0] != '') {
         split.pop()
         var ext = split.shift()
-        this.client.hastebin(split.join('\n'), ext).then(res => msg.say(res));
+        this.client.hastebin(split.join('\n'), ext).then(res => {
+          const embed = new RichEmbed({
+            title: 'Hastebin created!',
+            description: `View the hastebin [here](${res})`,
+            footer: {
+              icon_url: this.client.user.avatarURL,
+              text: EmbedFooter()
+            },
+            color: 0xFE5B35
+          })
+
+          msg.say({ embed })
+        });
       } else {
         split.pop()
         split.shift()
-        this.client.hastebin(split.join('\n'), 'txt').then(res => msg.say(res));
+        this.client.hastebin(split.join('\n'), 'txt').then(res => {
+          const embed = new RichEmbed({
+            title: 'Hastebin created!',
+            description: `View the hastebin [here](${res})`,
+            footer: {
+              icon_url: this.client.user.avatarURL,
+              text: EmbedFooter()
+            },
+            color: 0xFE5B35
+          })
+
+          msg.say({ embed })
+        });
       }
     } else {
-      this.client.hastebin(content, 'txt').then(res => msg.say(res));
+      this.client.hastebin(content, 'txt').then(res => {
+        const embed = new RichEmbed({
+          title: 'Hastebin created!',
+          description: `View the hastebin [here](${res})`,
+          footer: {
+            icon_url: this.client.user.avatarURL,
+            text: EmbedFooter()
+          },
+          color: 0xFE5B35
+        })
+
+        msg.say({ embed })
+      });
     }
   }
 };
