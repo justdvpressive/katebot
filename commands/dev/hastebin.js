@@ -11,11 +11,6 @@ module.exports = class HastebinCommand extends Command {
       description: 'Makes a new hastebin',
       args: [
         {
-          key: 'ext',
-          prompt: 'What extension is this code?',
-          type: 'string'
-        },
-        {
           key: 'content',
           prompt: 'What content should I put in the Hastebin?',
           type: 'string'
@@ -24,7 +19,20 @@ module.exports = class HastebinCommand extends Command {
     });
   }
 
-  run(msg, { ext, content }) {
-    this.client.hastebin(content, ext).then(res => msg.say(res));
+  run(msg, { content }) {
+    if(content.beginsWith('```')) {
+      var text = content.slice(3)
+      if(text.split('\n')[0] != '') {
+        text.pop()
+        var ext = text.shift()
+        this.client.hastebin(text, ext).then(res => msg.say(res));
+      } else {
+        text.pop()
+        text.shift()
+        this.client.hastebin(content, 'txt').then(res => msg.say(res));
+      }
+    } else {
+      this.client.hastebin(content, 'txt').then(res => msg.say(res));
+    }
   }
 };
