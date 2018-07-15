@@ -24,7 +24,7 @@ module.exports = class SuggestCommand extends Command {
       .setTitle('Suggestion!')
       .setColor('#FE5B35')
       .setDescription(suggestion)
-      .setFooter('By ' + msg.member.username + '#' + msg.member.discriminator, msg.member.avatarURL)
+      .setFooter('By ' + msg.author.username + '#' + msg.author.discriminator, msg.author.avatarURL)
       .setTimestamp(new Date().now);
     
     const channel = await msg.guild.channels.find('name', 'suggestions');
