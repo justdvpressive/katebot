@@ -1,7 +1,7 @@
 const {  Command  } = require('discord.js-commando');
 const  EmbedFooter  = require('../../util/embedFooter');
 
-module.exports = class Command extends Command {
+module.exports = class SnippetCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'snippets',
