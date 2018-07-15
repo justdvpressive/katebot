@@ -11,7 +11,7 @@ module.exports = class KateClient extends CommandoClient {
     this.enmapped = new Enmap({ 
       provider: new EnmapPGSql({
         name: 'settings',
-        connectionString = process.env.DATABASE_URL
+        connectionString: process.env.DATABASE_URL
       })
     });
   }

@@ -1,7 +1,7 @@
 const {  Command  } = require('discord.js-commando');
 const Enmap = require('enmap');
 const EnmapPGSql = require('enmap-pgsql');
-const customs = new Enmap({ provider: new EnmapPGSql({ name: 'customs', connectionString = process.env.DATABASE_URL }) });
+const customs = new Enmap({ provider: new EnmapPGSql({ name: 'customs', connectionString: process.env.DATABASE_URL }) });
 
 
 module.exports = class CustomCommandsCommand extends Command {
