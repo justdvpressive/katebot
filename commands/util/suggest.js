@@ -28,7 +28,7 @@ module.exports = class SuggestCommand extends Command {
       .setFooter(EmbedFooter(), this.client.user.avatarURL)
       .setTimestamp(new Date().now);
     
-    const channel = await msg.guild.channels.find('suggestions');
+    const channel = await msg.guild.channels.find('name', 'suggestions');
     channel.send({ embed }).then(message => {
       message.react('👍');
       message.react('👎');
