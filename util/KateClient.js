@@ -1,4 +1,5 @@
 const { CommandoClient } = require('discord.js-commando');
+const { request }        = require('https');
 
 module.exports = class KateClient extends CommandoClient {
   hastebin(input) {
