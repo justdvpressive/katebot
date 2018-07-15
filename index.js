@@ -1,15 +1,10 @@
 const { CommandoClient } = require('discord.js-commando');
-const fs = require('fs');
-if(fs.existsSync(__dirname + '/config.js')) {
-  fs.createReadStream(__dirname + '/config.sample.js').pipe(fs.createWriteStream(__dirname + '/config.js'));
-}
-const config = require('./config.js');
 const path = require('path');
 const pkgcnf = require('./package.json');
 
 const bot = new CommandoClient({
-  commandPrefix: config.discord.prefix,
-  owner: config.discord.owners,
+  commandPrefix: process.env.prefix,
+  owner: [ process.env.owner ],
   disableEveryone: true,
   unknownCommandResponse: false
 });
@@ -17,7 +12,7 @@ const bot = new CommandoClient({
 bot.on('ready', () => {
   console.log('Ready!');
   bot.user.setActivity(`${bot.commandPrefix}help | ${pkgcnf.version} by ${pkgcnf.author.name}`, { url: 'https://kate.js.org' });
-  bot.user.setUsername(config.discord.name);
+  bot.user.setUsername(process.env.name);
 });
 
 bot.registry
@@ -34,4 +29,4 @@ bot.registry
   })
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-bot.login(config.discord.token);
+bot.login(process.env.token);

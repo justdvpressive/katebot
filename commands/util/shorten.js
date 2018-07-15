@@ -25,7 +25,7 @@ module.exports = class ShortenCommand extends Command {
     ReqProm({
       method: 'POST',
       uri: 'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key='
-        + config.apiKeys.firebase,
+        + process.env.firebaseApiKey,
       body: {
         longDynamicLink: 'https://katebot.page.link/?link=' + url,
         suffix: {
