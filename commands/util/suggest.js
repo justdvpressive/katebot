@@ -29,7 +29,8 @@ module.exports = class SuggestCommand extends Command {
       .setTimestamp(new Date().now);
     
     const channel = await msg.guild.channels.find('name', 'suggestions');
-    channel.send({ embed }).then(message => {
+    if(!channel) return msg.say('**Please create a channel called `suggestions` to use this command!**');
+    else channel.send({ embed }).then(message => {
       message.react('👍');
       message.react('👎');
     });
