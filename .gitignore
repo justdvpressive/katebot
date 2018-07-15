@@ -71,6 +71,3 @@ typings/
 
 # Serverless directories
 .serverless
-
-# Config file for the bot
-config.js
