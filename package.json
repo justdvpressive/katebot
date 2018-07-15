@@ -13,7 +13,8 @@
     "discord.js": "^11.3.2",
     "discord.js-commando": "^0.10.0",
     "request": "^2.87.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "snekfetch": "^4.0.4"
   },
   "scripts": {
     "start": "nodemon"
