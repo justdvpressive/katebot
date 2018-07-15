@@ -20,7 +20,7 @@ module.exports = class InfoCommand extends Command {
       .addField('Version', PkgInfo.version, true)
       .addField('Author', PkgInfo.author.name, true)
       .addField('Source', `[Repository](${PkgInfo.repository})`, true)
-      .addField('License', PkgInfo.license)
+      .addField('License', PkgInfo.license, true)
       .addField('Name', this.client.user.username, true)
       .setThumbnail(this.client.user.avatarURL)
       .setColor('#FE5B35')
