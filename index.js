@@ -1,11 +1,11 @@
 const { CommandoClient } = require('discord.js-commando');
+const fs = require('fs');
 if(fs.existsSync(__dirname + '/config.js')) {
   fs.createReadStream('config.sample.js').pipe(fs.createWriteStream('config.js'));
 }
 const config = require('./config.js');
 const path = require('path');
 const pkgcnf = require('./package.json');
-const fs = require('fs');
 
 const bot = new CommandoClient({
   commandPrefix: config.discord.prefix,
