@@ -11,9 +11,9 @@ const bot = new CommandoClient({
   unknownCommandResponse: false
 });
 
-bot.setProvider(
-	MongoClient.connect(`mongodb://kate:${process.env.MongoPassword}@haydenbjyoung.me:27017`).then(client => new MongoDBProvider(client.db('kate')))
-).catch(console.error);
+MongoClient.connect(`mongodb://kate:${process.env.MongoPassword}@haydenbjyoung.me:27017`)
+  .then(client => 
+    new MongoDBProvider(client.db('kate')))
 
 bot.on('ready', () => {
   console.log('Ready!');
