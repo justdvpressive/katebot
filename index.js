@@ -1,8 +1,8 @@
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 const pkgcnf = require('./package.json');
-const Mongo = require('mongodb').MongoClient;
-const MongoProvider = require('commando-provider-mongo');
+const MongoClient = require('mongodb').MongoClient;
+const MongoDBProvider = require('commando-provider-mongo');
 
 const bot = new CommandoClient({
   commandPrefix: process.env.prefix,
@@ -11,9 +11,9 @@ const bot = new CommandoClient({
   unknownCommandResponse: false
 });
 
-bot.setProvider(
-  Mongo.connect('mongodb://kate:' + process.env.MongoPassword + '@haydenbjyoung.me:katebot');
-)
+client.setProvider(
+	MongoClient.connect(`mongodb://kate:${process.env.MongoPassword}@haydenbjyoung.me:27017`).then(client => new MongoDBProvider(client.db('kate')))
+).catch(console.error);
 
 bot.on('ready', () => {
   console.log('Ready!');
