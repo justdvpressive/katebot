@@ -22,10 +22,9 @@ module.exports = class SuggestCommand extends Command {
   async run(msg, { suggestion }) {
     var embed = new RichEmbed()
       .setTitle('Suggestion!')
-      .setAuthor('By ' + msg.author.username)
       .setColor('#FE5B35')
       .setDescription(suggestion)
-      .setFooter(EmbedFooter(), this.client.user.avatarURL)
+      .setFooter('By ' + msg.member.username + '#' + msg.member.discriminator, msg.member.avatarURL)
       .setTimestamp(new Date().now);
     
     const channel = await msg.guild.channels.find('name', 'suggestions');
