@@ -1,7 +1,7 @@
 const { CommandoClient } = require('discord.js-commando');
 const fs = require('fs');
 if(fs.existsSync(__dirname + '/config.js')) {
-  fs.createReadStream('config.sample.js').pipe(fs.createWriteStream('config.js'));
+  fs.createReadStream(__dirname + '/config.sample.js').pipe(fs.createWriteStream(__dirname + '/config.js'));
 }
 const config = require('./config.js');
 const path = require('path');
