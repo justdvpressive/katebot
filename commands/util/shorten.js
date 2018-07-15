@@ -2,7 +2,6 @@ const {  Command  } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
 const  EmbedFooter  = require('../../util/embedFooter');
 const  ReqProm      = require('request-promise');
-const  config       = require('../../config.json');
 
 module.exports = class ShortenCommand extends Command {
   constructor(client) {
