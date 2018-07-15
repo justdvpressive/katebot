@@ -6,7 +6,8 @@ const bot = new Kate({
   commandPrefix: process.env.prefix,
   owner: [ process.env.owner ],
   disableEveryone: true,
-  unknownCommandResponse: false
+  unknownCommandResponse: false,
+  ignoreSelf: false
 });
 
 bot.on('ready', () => {
@@ -21,7 +22,7 @@ bot.registry
     ['dev', 'Developer tools'],
     ['fun', 'Fun commands'],
     ['util', 'Utility commands'],
-    ['emotes', 'Emote commands']
+    ['custom', 'Custom commands']
   ])
   .registerDefaultGroups()
   .registerDefaultCommands({
