@@ -1,0 +1,14 @@
+{
+  "discord": {
+    "token": "TOKENGOESHERE",
+    "prefix": "~",
+    "owners": ["123456789012345678"],
+    "name": "Kate",
+    "welcomeMessages": true
+  },
+  "google": {
+    "firebaseApiKey": {
+      "web": "FIREBASEAPIKEYGOESHERE"
+    }
+  }
+}
