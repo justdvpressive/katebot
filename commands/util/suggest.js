@@ -19,7 +19,7 @@ module.exports = class SuggestCommand extends Command {
     });
   }
 
-  run(msg, { suggestion }) {
+  async run(msg, { suggestion }) {
     var embed = new RichEmbed()
       .setTitle('Suggestion!')
       .setAuthor('By ' + msg.author.username)
