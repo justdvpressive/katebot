@@ -20,7 +20,7 @@ module.exports = class HastebinCommand extends Command {
   }
 
   run(msg, { content }) {
-    if(content.beginsWith('```')) {
+    if(content.startsWith('```')) {
       var text = content.slice(3)
       if(text.split('\n')[0] != '') {
         text.pop()
