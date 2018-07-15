@@ -21,8 +21,7 @@ bot.registry
   .registerGroups([
     ['dev', 'Developer tools'],
     ['fun', 'Fun commands'],
-    ['util', 'Utility commands'],
-    ['custom', 'Custom commands']
+    ['util', 'Utility commands']
   ])
   .registerDefaultGroups()
   .registerDefaultCommands({
