@@ -26,11 +26,11 @@ module.exports = class HastebinCommand extends Command {
       if(split[0] != '') {
         split.pop()
         var ext = split.shift()
-        this.client.hastebin(split, ext).then(res => msg.say(res));
+        this.client.hastebin(split.join('\n'), ext).then(res => msg.say(res));
       } else {
         split.pop()
         split.shift()
-        this.client.hastebin(content, 'txt').then(res => msg.say(res));
+        this.client.hastebin(split.join('\n'), 'txt').then(res => msg.say(res));
       }
     } else {
       this.client.hastebin(content, 'txt').then(res => msg.say(res));
