@@ -1,7 +1,15 @@
 const { CommandoClient } = require('discord.js-commando');
 const request            = require('snekfetch');
+const meta               = require('../package.json');
 
 module.exports = class KateClient extends CommandoClient {
+  /**
+   * hastebin() - A function to create a hastebin
+   *
+   * @param {string} input The string to make up the body of the hastebin.
+   * @param {string} extension The extension of the hastebin (js, html, css, etc.)
+   * @returns
+   */
   hastebin(input, extension) {
     return new Promise((res, rej) => {
       if (!input) rej("Input argument is required.");
@@ -12,17 +20,13 @@ module.exports = class KateClient extends CommandoClient {
   }
 
   /**
-   * meme() - Returns a meme object from 9GAG.
-   *
-   * @returns {Promise} Meme object
+   * footer() - A text footer for embeds.
+   * 
+   * @returns
    * @example
-   * this.client.meme().images.normal // http://img-9gag-fun.9cache.com/photo/EyVtjpq_460s.jpg
+   * embed.setFooter(this.client.footer(), this.client.user.avatarURL);
    */
-  meme() {
-    return new Promise((res, rej) => {
-      request.get('http://infinigag.k3min.eu/funny/hot').then(body => {
-        res(body.data[Math.floor(Math.random() * body.data.length)]);
-      }).catch(e => rej(e));
-    })
+  footer() {
+    return `${process.env.name} v${meta.version} - By ${meta.author.name}`
   }
 }
