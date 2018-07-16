@@ -28,6 +28,8 @@ module.exports = class EvalCommand extends Command {
       .addField('Input:', '```js\n' + script + '\n```')
       .addField('Output:', '```js\n' + output + '\n```')
       .setColor('#FE5B35')
-      .setFooter(this.client.footer(), this.client.user.avatarURL);
+			.setFooter(this.client.footer(), this.client.user.avatarURL);
+			
+		msg.say({embed});
   }
 };
