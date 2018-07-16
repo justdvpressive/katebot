@@ -1,8 +1,14 @@
 const { CommandoClient } = require('discord.js-commando');
 const request            = require('snekfetch');
 const meta               = require('../package.json');
+const Enmap              = require("enmap");
+const Provider           = require("enmap-sqlite");
 
 module.exports = class KateClient extends CommandoClient {
+  constructor(options) {
+    super(options);
+    this.points = new Enmap({provider: new Provider({name: "points"})});
+  }
   /**
    * hastebin() - A function to create a hastebin
    *
