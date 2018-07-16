@@ -24,7 +24,7 @@ module.exports = class InfoCommand extends Command {
       .addField('Name', this.client.user.username, true)
       .setThumbnail(this.client.user.avatarURL)
       .setColor('#FE5B35')
-      .setFooter(EmbedFooter(), this.client.user.avatarURL);
+      .setFooter(this.client.footer(), this.client.user.avatarURL);
 
     msg.say({embed});
   }

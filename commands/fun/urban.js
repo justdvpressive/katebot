@@ -36,7 +36,7 @@ module.exports = class UrbanCommand extends Command {
           .setAuthor('By ' + definition.author)
           .setURL(definition.permalink)
           .setColor('#FE5B35')
-          .setFooter(EmbedFooter(), this.client.user.avatarURL)
+          .setFooter(this.client.footer(), this.client.user.avatarURL)
           .addField('Definition', definition.definition)
           .addField('Example', definition.example)
           .addField('\u200b', '👍 ' + definition.thumbs_up, true)
@@ -56,7 +56,7 @@ module.exports = class UrbanCommand extends Command {
           .setAuthor('By ' + definition.author)
           .setURL(definition.permalink)
           .setColor('#FE5B35')
-          .setFooter(EmbedFooter(), this.client.user.avatarURL)
+          .setFooter(this.client.footer(), this.client.user.avatarURL)
           .addField('Definition', definition.definition)
           .addField('Example', definition.example)
           .addField('\u200b', '👍 ' + definition.thumbs_up, true)
@@ -69,7 +69,7 @@ module.exports = class UrbanCommand extends Command {
           .setTitle('Urban Dictionary')
           .setDescription('No results were found.')
           .setColor('#FE5B35')
-          .setFooter(EmbedFooter(), this.client.user.avatarURL)
+          .setFooter(this.client.footer(), this.client.user.avatarURL)
         
         msg.say({ embed });
       })

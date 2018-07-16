@@ -25,7 +25,7 @@ module.exports = class JokeCommand extends Command {
         .setTitle(joke.title)
         .setURL(joke.url)
         .setColor('#FE5B35')
-        .setFooter(EmbedFooter(), this.client.user.avatarURL)
+        .setFooter(this.client.footer(), this.client.user.avatarURL)
         .setDescription(joke.selftext)
         .addField('\u200b', '👍 ' + joke.ups, true)
         .addField('\u200b', '👎 ' + joke.downs, true)

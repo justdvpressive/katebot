@@ -19,7 +19,7 @@ module.exports = class MemeCommand extends Command {
         image: meme.image.normal,
         url: meme.link,
         footer: {
-          text: EmbedFooter(),
+          text: this.client.footer(),
           icon_url: this.client.user.avatarURL
         },
         color: 0xFE5B35

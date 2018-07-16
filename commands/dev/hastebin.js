@@ -32,7 +32,7 @@ module.exports = class HastebinCommand extends Command {
             description: `View the hastebin [here](${res})`,
             footer: {
               icon_url: this.client.user.avatarURL,
-              text: EmbedFooter()
+              text: this.client.footer()
             },
             color: 0xFE5B35
           })
@@ -48,7 +48,7 @@ module.exports = class HastebinCommand extends Command {
             description: `View the hastebin [here](${res})`,
             footer: {
               icon_url: this.client.user.avatarURL,
-              text: EmbedFooter()
+              text: this.client.footer()
             },
             color: 0xFE5B35
           })
@@ -63,7 +63,7 @@ module.exports = class HastebinCommand extends Command {
           description: `View the hastebin [here](${res})`,
           footer: {
             icon_url: this.client.user.avatarURL,
-            text: EmbedFooter()
+            text: this.client.footer()
           },
           color: 0xFE5B35
         })

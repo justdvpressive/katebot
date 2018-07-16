@@ -37,7 +37,7 @@ module.exports = class ShortenCommand extends Command {
         .setTitle('URL Shortened!')
         .setColor('#FE5B35')
         .setDescription(body.shortLink)
-        .setFooter(EmbedFooter(), this.client.user.avatarURL);
+        .setFooter(this.client.footer(), this.client.user.avatarURL);
       
       msg.say(embed);
     }).catch(error => {
@@ -45,7 +45,7 @@ module.exports = class ShortenCommand extends Command {
         .setTitle('Uh-oh!')
         .setColor('#FE5B35')
         .setDescription('Something went wrong trying to shorten that link, sorry.')
-        .setFooter(EmbedFooter(), this.client.user.avatarURL);
+        .setFooter(this.client.footer(), this.client.user.avatarURL);
       
       msg.say(embed);
     })

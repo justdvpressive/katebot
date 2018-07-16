@@ -35,7 +35,7 @@ module.exports = class GithubCommand extends Command {
           .setURL(user.html_url)
           .setThumbnail(user.avatar_url)
           .setColor('#FE5B35')
-          .setFooter(EmbedFooter(), this.client.user.avatarURL)
+          .setFooter(this.client.footer(), this.client.user.avatarURL)
           .addField('Followers', user.followers, true)
           .addField('Gists', user.public_gists, true)
           .addField('Repos', user.public_repos, true);
@@ -51,7 +51,7 @@ module.exports = class GithubCommand extends Command {
             .setTitle('GitHub')
             .setDescription('No such user or organisation found.')
             .setColor('#FE5B35')
-            .setFooter(EmbedFooter(), this.client.user.avatarURL);
+            .setFooter(this.client.footer(), this.client.user.avatarURL);
           
           msg.say({ embed });
         } else {
@@ -73,7 +73,7 @@ module.exports = class GithubCommand extends Command {
           .setDescription((repo.description != null) ? repo.description : 'None' )
           .setThumbnail(repo.owner.avatar_url)
           .setColor('#FE5B35')
-          .setFooter(EmbedFooter(), this.client.user.avatarURL)
+          .setFooter(this.client.footer(), this.client.user.avatarURL)
           .addField('Language', (repo.language != null) ? repo.language : 'None' , true )
           .addField('License', (repo.license != null) ? repo.license.name : 'None', true )
           .addField('Size', repo.size, true)
@@ -87,7 +87,7 @@ module.exports = class GithubCommand extends Command {
             .setTitle('GitHub')
             .setDescription('No such repository.')
             .setColor('#FE5B35')
-            .setFooter(EmbedFooter(), this.client.user.avatarURL);
+            .setFooter(this.client.footer(), this.client.user.avatarURL);
           
           msg.say({ embed });
         } else {

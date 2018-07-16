@@ -1,6 +1,5 @@
 const {  Command  } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
-const  EmbedFooter  = require('../../util/embedFooter');
 
 module.exports = class ModuleCommand extends Command {
   constructor(client) {
@@ -25,7 +24,7 @@ module.exports = class ModuleCommand extends Command {
     var embed = new RichEmbed()
       .setTitle('Module: ' + module)
       .setColor('#FE5B35')
-      .setFooter(EmbedFooter(), this.client.user.avatarURL);
+      .setFooter(this.client.footer(), this.client.user.avatarURL);
     const group = this.client.registry.findGroups(module, true)[0]
     if(group === undefined) {
       embed.setDescription('Module \`' + module + '\` does not exist.');

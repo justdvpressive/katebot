@@ -17,7 +17,7 @@ module.exports = class modulesCommand extends Command {
     var embed = new RichEmbed()
       .setTitle('Modules')
       .setColor('#FE5B35')
-      .setFooter(EmbedFooter(), this.client.user.avatarURL);
+      .setFooter(this.client.footer(), this.client.user.avatarURL);
     var groups = []
     this.client.registry.groups.forEach(group => {
       groups.push(group.id);

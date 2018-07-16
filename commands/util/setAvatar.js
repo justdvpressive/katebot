@@ -26,7 +26,7 @@ module.exports = class SetAvatarCommand extends Command {
       .setTitle('Avatar changed!')
       .setColor('#FB5E35')
       .setImage(url)
-      .setFooter(EmbedFooter(), this.client.user.avatarURL);
+      .setFooter(this.client.footer(), this.client.user.avatarURL);
 
     msg.say({ embed });
   }

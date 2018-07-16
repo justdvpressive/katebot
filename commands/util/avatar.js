@@ -27,7 +27,7 @@ module.exports = class AvatarCommand extends Command {
         .setTitle('Avatar: ' + msg.author.username)
         .setColor('#FE5B35')
         .setImage(avatar)
-        .setFooter(EmbedFooter(), this.client.user.avatarURL);
+        .setFooter(this.client.footer(), this.client.user.avatarURL);
 
       msg.say({embed});
     } else {
@@ -36,7 +36,7 @@ module.exports = class AvatarCommand extends Command {
         .setTitle('Avatar: ' + user.username)
         .setColor('#FE5B35')
         .setImage(avatar)
-        .setFooter(EmbedFooter(), this.client.user.avatarURL);
+        .setFooter(this.client.footer(), this.client.user.avatarURL);
 
       msg.say({embed});
     }

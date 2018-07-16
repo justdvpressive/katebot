@@ -20,7 +20,7 @@ module.exports = class RPSCommand extends Command {
       .setTitle('RPS!')
       .setColor('FE5B35')
       .setDescription(randomAnswer)
-      .setFooter(EmbedFooter(), this.client.user.avatarURL);
+      .setFooter(this.client.footer(), this.client.user.avatarURL);
     
     msg.say({ embed });
   }
