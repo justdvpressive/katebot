@@ -15,7 +15,6 @@
     "dotenv": "^6.0.0",
     "enmap": "^2.6.3",
     "enmap-pgsql": "^2.0.0",
-    "enmap-sqlite": "^2.0.3",
     "node-gyp": "^3.7.0",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
