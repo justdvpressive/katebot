@@ -23,8 +23,8 @@ module.exports = class EvalCommand extends Command {
 
 	run(msg, { script }) {
     const output = eval(script);
-    const embed = new RichEmbed()
-      .setTitle('`eval`')
+    var embed = new RichEmbed()
+      .setTitle('eval')
       .addField('Input:', '```js\n' + script + '\n```')
       .addField('Output:', '```js\n' + output + '\n```')
       .setColor('#FE5B35')
