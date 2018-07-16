@@ -29,4 +29,8 @@ module.exports = class KateClient extends CommandoClient {
   footer() {
     return `${process.env.name} v${meta.version} - By ${meta.author.name}`
   }
+
+  get version() {
+    return `${meta.version}`
+  }
 }

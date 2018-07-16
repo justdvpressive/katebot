@@ -23,7 +23,7 @@ module.exports = class HelpCommand extends Command {
   run(msg, { command }) {
     if(command == '') {
       var embed = new RichEmbed()
-        .setDescription(`***Katebot v0.1.0***\nInvite me to your server here!\n>>> https://discordapp.com/api/oauth2/authorize?client_id=${this.client.user.id}&permissions=0&scope=bot <<<\n\nYou can use \`${this.client.commandPrefix}modules\` to get a list of modules.\nYou can use \`${this.client.commandPrefix}commands moduleName\` to get a list of commands in that module.\nYou can use \`${this.client.commandPrefix}help CommandName\` to find detailed information about a command.`)
+        .setDescription(`***Katebot v${this.client.version}***\nInvite me to your server here!\n>>> https://discordapp.com/api/oauth2/authorize?client_id=${this.client.user.id}&permissions=0&scope=bot <<<\n\nYou can use \`${this.client.commandPrefix}modules\` to get a list of modules.\nYou can use \`${this.client.commandPrefix}commands moduleName\` to get a list of commands in that module.\nYou can use \`${this.client.commandPrefix}help CommandName\` to find detailed information about a command.`)
         .setFooter(this.client.footer(), this.client.user.avatarURL)
         .setColor('#FE5B35');
 
