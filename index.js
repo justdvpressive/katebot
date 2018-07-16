@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Kate = require('./util/KateClient');
 const path = require('path');
 const pkgcnf = require('./package.json');
