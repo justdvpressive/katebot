@@ -1,6 +1,5 @@
 const {  Command  } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
-const  EmbedFooter  = require('../../util/embedFooter');
 
 module.exports = class HastebinCommand extends Command {
   constructor(client) {

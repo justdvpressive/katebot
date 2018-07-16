@@ -1,6 +1,5 @@
 const {  Command  } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
-const  EmbedFooter  = require('../../util/embedFooter');
 const    PkgInfo    = require('../../package.json');
 
 module.exports = class InfoCommand extends Command {

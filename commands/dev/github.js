@@ -1,7 +1,6 @@
 const {  Command  } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
 const    ReqProm    = require('request-promise');
-const  EmbedFooter  = require('../../util/embedFooter');
 
 module.exports = class GithubCommand extends Command {
   constructor(client) {
