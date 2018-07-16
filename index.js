@@ -25,7 +25,8 @@ bot.registry
   ])
   .registerDefaultGroups()
   .registerDefaultCommands({
-    help: false
+    help: false,
+    eval_: false
   })
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
