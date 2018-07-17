@@ -27,9 +27,8 @@ module.exports = class AwardCommand extends Command {
   run(msg, { user, amount }) {
     const key = `${msg.guild.id}-${user.id}`;
     const userPoints = this.client.points.getProp(key, 'points');
-    const userLevel = Math.floor(0.1 * Math.sqrt(curPoints));
+    const userLevel = Math.floor(0.1 * Math.sqrt(userPoints));
     this.client.points.setProp(key, 'points', userPoints + amount);
-    const curLevel = Math.floor(0.1 * Math.sqrt(currentPoints));
     if (this.client.points.getProp(key, "level") < userLevel) {
       message.reply(`<@!${user.id}>, you've leveled up to level **${userLevel}**! Great work!`);
       this.client.points.setProp(key, "level", userLevel);
