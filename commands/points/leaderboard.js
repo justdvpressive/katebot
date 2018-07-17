@@ -15,9 +15,9 @@ module.exports = class LeaderboardCommand extends Command {
   run(msg) {
     const filtered = this.client.points.filterArray( p => p.guild === msg.guild.id );
     function compare(a,b) {
-      if (a.points < b.points)
-        return -1;
       if (a.points > b.points)
+        return -1;
+      if (a.points < b.points)
         return 1;
       return 0;
     }
