@@ -8,7 +8,9 @@ module.exports = class LeaderboardCommand extends Command {
       group: 'points',
       memberName: 'leaderboard',
       description: 'Shows the top 10 members in the guild.',
-      guildOnly: true
+      examples: ['leaderboard', 'lb'],
+      guildOnly: true,
+      aliases: ['lb']
     });
   }
 
