@@ -14,8 +14,16 @@ module.exports = class LeaderboardCommand extends Command {
 
   run(msg) {
     const filtered = this.client.points.filterArray( p => p.guild === msg.guild.id );
-    const sorted = filtered.arsort();
-    const top10 = sorted.splice(0, 10);
+    function compare(a,b) {
+      if (a.points < b.points)
+        return -1;
+      if (a.points > b.points)
+        return 1;
+      return 0;
+    }
+    
+    const sorted = filtered.sort(compare);
+    const top10 = sorted.slice(0, 10);
     var list = '';
     var embed = new RichEmbed()
       .setTitle('Leaderboard for ' + msg.guild.name)
