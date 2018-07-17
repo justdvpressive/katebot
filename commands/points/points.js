@@ -33,6 +33,18 @@ module.exports = class PointsCommand extends Command {
         .setFooter(this.client.footer(), this.client.user.avatarURL);
 
       msg.say({embed});
+    } else {
+      const key = `${msg.guild.id}-${user.id}`;
+      const curPoints = this.client.points.getProp(key, 'points');
+      const curLevel = Math.floor(0.1 * Math.sqrt(curPoints));
+      var embed = new RichEmbed()
+        .setTitle('Points: ' + user.username)
+        .addField('Points', curPoints, true)
+        .addField('Level', curLevel, true)
+        .setColor('#FE5B35')
+        .setFooter(this.client.footer(), this.client.user.avatarURL);
+
+      msg.say({embed});
     }
   }
 };
