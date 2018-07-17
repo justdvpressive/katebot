@@ -18,7 +18,7 @@ module.exports = class AwardCommand extends Command {
         {
           key: 'amount',
           prompt: 'How many points do you want to award?',
-          type: 'number'
+          type: 'integer'
         }
       ]
     });
