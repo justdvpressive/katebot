@@ -17,7 +17,7 @@ module.exports = class AchieveCommand extends Command {
         {
           key: 'text',
           prompt: 'What would you like to achieve?',
-          type: 'text'
+          type: 'string'
         }
       ]
     });
