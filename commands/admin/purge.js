@@ -16,18 +16,34 @@ module.exports = class PurgeCommand extends Command {
           prompt: 'How many messages should I delete?',
           type: 'integer',
           default: ''
-        }
+        },
+        {
+          key: 'user',
+          prompt: 'Whose messages shall I delete?',
+          type: 'user',
+          default: ''
+        },
       ]
     });
   }
 
-  run(msg, { number }) {
-    msg.channel.fetchMessages({ limit: number || 100 })
-      .then(msgs => {
-        msgs.forEach(message => {
-          message.delete();
+  run(msg, { number, user }) {
+    if(user === '') {
+      msg.channel.fetchMessages({ limit: number || 100 })
+        .then(msgs => {
+          msgs.forEach(message => {
+            message.delete();
+          });
         });
-      });
-    msg.delete();
+      msg.delete();
+    } else {
+      for(i = number; i < number; i++) {
+        if(user.lastMessage.channel.id === msg.channel.id) {
+          user.lastMessage.delete();
+        } else {
+          i--;
+        };
+      }
+    }
   }
 };
