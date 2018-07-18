@@ -19,6 +19,10 @@ module.exports = class AsciifyCommand extends Command {
   }
 
   run(msg, {text}) {
-    msg.reply('```\n' + figlet(text, {}, err => console.error(err)) + '```\n');
+    figlet(text, {}, (err, data) => {
+      if(err) console.error(err);
+      return;
+    });
+    msg.say(`\`\`\`\n${data}\n\`\`\``);
   }
 };
