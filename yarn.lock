@@ -2,16 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/better-sqlite3@^3.1.3":
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/@types/better-sqlite3/-/better-sqlite3-3.1.3.tgz#cd74eb09393ccc06014b8d9bae4f8d5e4b99c5fb"
-  dependencies:
-    "@types/integer" "*"
-
-"@types/integer@*":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@types/integer/-/integer-1.0.0.tgz#f5b313876012fad0afeb5318f03cb871064eb33e"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -152,27 +142,9 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-better-sqlite-pool@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/better-sqlite-pool/-/better-sqlite-pool-0.1.2.tgz#2a06e6fb08c12fe3d5af8e1f379725b308553541"
-  dependencies:
-    "@types/better-sqlite3" "^3.1.3"
-    better-sqlite3 "^4.1.1"
-
-better-sqlite3@^4.1.1:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/better-sqlite3/-/better-sqlite3-4.1.4.tgz#9fe1dcf7b699087b98b1997cbb00261e265897e2"
-  dependencies:
-    bindings "^1.3.0"
-    integer "^1.0.5"
-
 binary-extensions@^1.0.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
-
-bindings@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.3.0.tgz#b346f6ecf6a95f5a815c5839fc7cdb22502f1ed7"
 
 block-stream@*:
   version "0.0.9"
@@ -497,12 +469,6 @@ enmap-pgsql@^2.0.0:
   dependencies:
     pg "^7.4.1"
 
-enmap-sqlite@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/enmap-sqlite/-/enmap-sqlite-2.0.3.tgz#d372b0a37cb9bbd0753b764087de34600871e875"
-  dependencies:
-    better-sqlite-pool "^0.1.2"
-
 enmap@^2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/enmap/-/enmap-2.6.3.tgz#74338c1c28ca9482463394b794923397fd4abcec"
@@ -594,6 +560,10 @@ fast-deep-equal@^1.0.0:
 fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
+
+figlet@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/figlet/-/figlet-1.2.0.tgz#6c46537378fab649146b5a6143dda019b430b410"
 
 fill-range@^4.0.0:
   version "4.0.0"
@@ -859,12 +829,6 @@ inherits@2, inherits@^2.0.1, inherits@~2.0.0, inherits@~2.0.3:
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
-
-integer@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/integer/-/integer-1.0.5.tgz#cadbf6078290389e8e4e29226e6b0044433deec1"
-  dependencies:
-    bindings "^1.3.0"
 
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
