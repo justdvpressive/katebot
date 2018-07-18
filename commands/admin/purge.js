@@ -41,7 +41,7 @@ module.exports = class PurgeCommand extends Command {
         if(user.lastMessage.channel.id === msg.channel.id) {
           user.lastMessage.delete();
         } else {
-          i--;
+          number--;
         };
       }
     }
