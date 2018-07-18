@@ -14,7 +14,7 @@ module.exports = class PurgeCommand extends Command {
         {
           key: 'number',
           prompt: 'How many messages should I delete?',
-          type: 'number',
+          type: 'integer',
           default: ''
         }
       ]
