@@ -22,10 +22,12 @@ module.exports = class PurgeCommand extends Command {
   }
 
   run(msg, { number }) {
-    const msgs = msg.channel.fetchMessages({ limit: number || 100 });
-    msgs.forEach(message => {
-      message.delete();
-    });
+    msg.channel.fetchMessages({ limit: number || 100 })
+      .then(msgs => {
+        msgs.forEach(message => {
+          message.delete();
+        });
+      });
     msg.delete();
   }
 };
