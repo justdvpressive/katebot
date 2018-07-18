@@ -48,7 +48,8 @@ bot.registry
     ['dev', 'Developer tools'],
     ['fun', 'Fun commands'],
     ['util', 'Utility commands'],
-    ['points', 'Points-based commands']
+    ['points', 'Points-based commands'],
+    ['admin', 'Administrative commands']
   ])
   .registerDefaultCommands({
     help: false,
